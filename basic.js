@@ -1,7 +1,6 @@
 var fs = require("fs");
 var inquirer = require("inquirer");
 var question = require("./questions.json");
-var score = 0;
 
 function Questions(question, answer) {
     this.question = question;
@@ -18,7 +17,7 @@ var createQuestion = function() {
             message: "Please write the answer to your question:"
         }
     ]).then(function(response){
-        var newQuestion = new Question(
+        var newQuestion = new Questions(
             response.question,
             response.answer);
         question.push(newQuestion);
@@ -32,37 +31,3 @@ var createQuestion = function() {
 module.exports = {
     createQuestion
 }
-
-// var count = 0;
-
-// var askQuestion = function() {
-//     if (count < 5){
-//         inquirer.prompt([
-//             {
-//                 name: "question",
-//                 message: question[count].front
-//             }
-//         ]).then(function(answers){
-//             if (answers.question === question[count].back){
-//                 score++;
-//                 console.log(`-----------------------------`);
-//                 console.log(`That's correct!`);
-//                 console.log(`Current Score: ${score}`);
-//                 console.log(`-----------------------------`);
-//             } else {
-//                 console.log(`-----------------------------`);
-//                 console.log(`That's incorrect! The correct answer is ${question[count].back}`);
-//                 console.log(`Current Score: ${score}`);
-//                 console.log(`-----------------------------`);
-//             }
-//             count++;
-//             askQuestion();
-//         });
-//     } else if (count > 5){
-//         console.log(`-----------------------------`);
-//         console.log(`All cards completed!`);
-//         console.log(`Your Score: ${score}`);
-//         console.log(`-----------------------------`);
-//     }
-// };
-// askQuestion();
