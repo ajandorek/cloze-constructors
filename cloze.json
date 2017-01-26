@@ -10,5 +10,13 @@
   {
     "question": ".......... is Doug's bully",
     "clozeDeleted": "Roger Klotz"
+  },
+  {
+    "question": ".......... is the capital of Connecticut",
+    "clozeDeleted": "Hartford"
+  },
+  {
+    "question": "The .......... are the National League team in New York City",
+    "clozeDeleted": "New York Mets"
   }
 ]
